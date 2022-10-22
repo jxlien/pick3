@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-	<title>Svelte Sides</title>
+	<title>Pick3</title>
 	<meta property="og:title" content="Site Tittle" />
 	<meta property="og:description" content="Site description" />
 	<meta property="og:site_name" content="Site Name" />
