@@ -1,5 +1,0 @@
-tasks:
-  - init: |
-      npm run build
-    command: |
-      npm run dev

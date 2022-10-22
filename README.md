@@ -1,4 +1,5 @@
-# pic3
+Once
+`npm run install`
 
-### TODO
-[] 
+On each file save
+`npm run start`
