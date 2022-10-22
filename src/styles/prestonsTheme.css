@@ -1,0 +1,76 @@
+a:hover,
+a:focus {
+    opacity: 0.75;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Raleway', 'Open Sans', 'Source Sans Pro', Roboto, 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Myriad Pro', 'Segoe UI', Myriad, Helvetica, 'Lucida Grande', 'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', Tahoma, Geneva, Arial, sans-serif !important;
+    font-weight: 900;
+    text-shadow: none;
+}
+
+main>p,
+main>ul li,
+main>ol li {
+    font-size: 12pt;
+    line-height: 1.7;
+    font-family: 'Lora', 'PT Serif', Cambria, 'Hoefler Text', Utopia, 'Liberation Serif', 'Nimbus Roman No9 L Regular', Times, 'Times New Roman', serif;
+}
+
+main>p+p {
+    margin-top: 1em;
+}
+
+blockquote p,
+blockquote q {
+    font-family: 'Lora', 'PT Serif', Cambria, 'Hoefler Text', Utopia, 'Liberation Serif', 'Nimbus Roman No9 L Regular', Times, 'Times New Roman', serif;
+    font-weight: 300;
+}
+
+blockquote cite,
+blockquote footer {
+    font-family: 'Lora', 'PT Serif', Cambria, 'Hoefler Text', Utopia, 'Liberation Serif', 'Nimbus Roman No9 L Regular', Times, 'Times New Roman', serif;
+    font-weight: 700;
+}
+
+form select,
+form .split-input>input,
+form .split-input>select,
+form [type="text"],
+form [type="tel"],
+form [type^="cc-"],
+form [type="email"],
+form textarea {
+    border: 1px solid rgba(0, 0, 0, .15);
+    box-shadow: none;
+}
+
+form select:focus,
+form .split-input>input:focus,
+form .split-input>select:focus,
+form [type="text"]:focus,
+form [type="tel"]:focus,
+form [type^="cc-"]:focus,
+form [type="email"]:focus,
+form textarea:focus {
+    border-color: orange;
+    box-shadow: #fc0 0 0 3px;
+}
+
+@media (min-width: 600px) {
+
+    main>p,
+    main>ul li,
+    main>ol li {
+        font-size: 14pt;
+    }
+}
+
+[data-modal] article {
+    padding: 1em;
+}
