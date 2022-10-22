@@ -3,6 +3,7 @@
 	import '../styles/main.css';
 	import '../styles/prestonsTheme.css';
 	import Nav from './components/nav.svelte';
+	import '$lib/db';
 </script>
 
 <svelte:head>
