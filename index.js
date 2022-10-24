@@ -6,7 +6,7 @@ const app = express();
 
 // Handling '/' route
 app.get("/", async (req, res) => {
-    const data = await main()
+    const data = await main(req.query)
     res.json({results: data});
 })
 

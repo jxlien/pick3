@@ -25,10 +25,12 @@ function rndEl(array) {
 // *** MAIN *** //
 
 
-async function main() {
+async function main(urlparams = {}) {
 
+
+  
   console.log("started");
-  const zip = 37922;
+  const zip = urlparams.near ? urlparams.near: 'chicago';
 
   const data = await search(zip);
   const pick3 = [];
