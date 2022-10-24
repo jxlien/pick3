@@ -1,4 +1,4 @@
-const { search, searchNames } = require('./api')
+const {main} = require('./api')
 const express = require("express");
 
 // Creating express app object
@@ -6,13 +6,7 @@ const app = express();
 
 // Handling '/' route
 app.get("/", async (req, res) => {
-    const data = await search(req.query)
-    res.send(data);
-})
-
-// Handling '/' route
-app.get("/names", async (req, res) => {
-    const data = await searchNames(req.query)
+    const data = await main()
     res.send(data);
 })
 
