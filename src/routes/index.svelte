@@ -37,30 +37,14 @@
 		cards = [];
 		progressState = 'input';
 	}
-	const highlightStyles = 'bg-black underline p-2 mx-2 rotate-12 scale-110 transform inline-block';
 </script>
 
-<main class="flex flex-col items-start min-h-screen">
-	<div
-		class="w-full pt-24 pb-16 xl:pb-24 xl:pt-36 flex flex-col items-center justify-center bg-opacity-40 backdrop-blur-lg bg-gradient-to-b from-black to-transparent"
-	>
-		{#if progressState === 'input'}
-			<h1 class="text-7xl text-center px-6">Pick3</h1>
-			<h3 class="text-3xl text-center mt-3">For the indecisive</h3>
-		{/if}
-		{#if progressState === 'cards' && cards}
-			<h1 class="text-5xl text-center px-6">
-				Pick a place you <span class={highlightStyles}>DO NOT</span> want to go to
-			</h1>
-			<button on:click={restart} class="mt-8 xl:mt-12">restart</button>
-		{/if}
-	</div>
-
+<main class="flex flex-col items-start min-h-screen relative overflow-hidden">
 	{#if progressState === 'input'}
 		<ZipInput {loadChoices} {loading} />
 	{/if}
 	{#if progressState === 'cards' && cards}
-		<Cards {cards} />
+		<Cards {cards} {restart} />
 	{/if}
 	<footer class="mt-auto flex justify-center w-full py-6">
 		<button class="transform active:translate-y-1 transition-transform">I'm confused</button>
