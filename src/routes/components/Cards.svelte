@@ -5,20 +5,23 @@
 	export let deleteCard;
 	export let progressState;
 	export let celebrateMessage;
+	export let celebrateHeader;
 	import { fly } from 'svelte/transition';
 
 	const highlightStyles = 'bg-black underline p-2 mx-2 rotate-12 scale-110 transform inline-block';
 </script>
 
-<div transition:fly={{ y: -200, duration: 1000 }} class="absolute inset-0 w-full-h-full">
+<div transition:fly={{ y: -200, duration: 1000 }} class="w-full h-full">
 	<div
 		class="w-full pt-24 pb-16 xl:pb-24 xl:pt-36 flex flex-col items-center justify-center bg-opacity-40 backdrop-blur-lg bg-gradient-to-b from-black to-transparent"
 	>
 		<h1 class="text-5xl text-center px-6">
-			Pick a place you <span class={highlightStyles}>DO NOT</span> want to go to
+			{#if celebrateHeader}
+				{celebrateHeader}
+			{:else}
+				Pick a place you <span class={highlightStyles}>DO NOT</span> want to go to
+			{/if}
 		</h1>
-
-		<button on:click={restart} class="mt-8 xl:mt-12">restart</button>
 	</div>
 	<section
 		class="pt-4 flex w-full flex-wrap justify-center {cards.length !== 3
@@ -59,4 +62,7 @@
 			</div>
 		{/if}
 	</section>
+	<div class="w-full flex justify-center mx-auto max-w-[1224px] px-6 xl:px-0">
+		<button on:click={restart} class="mt-8 xl:mt-12 z-10">← Restart</button>
+	</div>
 </div>

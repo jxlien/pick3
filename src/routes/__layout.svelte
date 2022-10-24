@@ -4,6 +4,7 @@
 	import '../styles/prestonsTheme.css';
 	import Nav from './components/nav.svelte';
 	import '$lib/db';
+	import { fade } from 'svelte/transition';
 </script>
 
 <svelte:head>
@@ -19,3 +20,10 @@
 <Nav />
 
 <slot />
+
+<footer transition:fade class="fixed bottom-0  flex justify-center w-full py-6">
+	<button
+		on:click={() => window.alert('Just pick one')}
+		class="transform active:translate-y-1 transition-transform">I'm confused</button
+	>
+</footer>
