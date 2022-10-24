@@ -12,9 +12,11 @@
 	>
 		<img alt="elevator" class="w-[20vw] m-auto z-10" src="/static/elevator.png" />
 	</div>
-	<div
-		class="absolute cable w-1/3 h-full inset-0 ml-auto flex flex-col justify-center items-center pt-56"
-	>
-		<img alt="elevator" class="w-[20vw] m-auto z-10" src="/static/elevator.png" />
+	<div class="absolute cable w-1/3 h-full inset-0 ml-auto pt-56 overflow-hidden">
+		<img alt="elevator" class="w-[20vw] m-auto z-10 absolute inset-0" src="/static/elevator.png" />
+		<img
+			alt="location"
+			class="store-image z-[11] absolute inset-0 m-auto w-2/5 h-2/5 object-cover"
+		/>
 	</div>
 </main>
