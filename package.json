@@ -22,6 +22,7 @@
     "tailwindcss": "^3.0.23"
   },
   "dependencies": {
-    "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e"
+    "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
+    "js-confetti": "^0.11.0"
   }
 }

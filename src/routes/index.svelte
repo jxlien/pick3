@@ -1,41 +1,43 @@
 <script>
 	import ZipInput from './components/ZipInput.svelte';
 	import Cards from './components/Cards.svelte';
+	import JSConfetti from 'js-confetti';
 
 	let cards = [];
 	let loading = false;
 	let progressState = 'input';
+	let celebrateMessage = 'Flipping between the two...';
 
-	function loadChoices() {
+	async function loadChoices() {
 		loading = true;
-		setTimeout(() => {
-			cards = [
-				{
-					name: 'Burger',
-					image: {
-						url: 'https://images.unsplash.com/photo-1606131731446-5568d87113aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YnVyZ2Vyc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60'
-					}
-				},
-				{
-					name: 'Ice cream',
-					image: {
-						url: 'https://images.unsplash.com/photo-1576506295286-5cda18df43e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aWNlJTIwY3JlYW18ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60'
-					}
-				},
-				{
-					name: 'Pizza',
-					image: {
-						url: 'https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cGl6emF8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60'
-					}
-				}
-			];
-			loading = false;
-			progressState = 'cards';
-		}, 1000);
+		cards = (
+			await fetch('https://pick3.onrender.com').then((res) => res.json())
+		).results;
+		
+		loading = false;
+		progressState = 'cards';
 	}
 	function restart() {
 		cards = [];
 		progressState = 'input';
+		celebrateMessage = 'Flipping between the two...';
+	}
+	function deleteCard(cardInd) {
+		if (cards.length !== 3) return;
+		cards.splice(cardInd, 1);
+		cards = [...cards];
+		progressState = 'flipping';
+
+		setTimeout(() => {
+			const cardToKill = Math.round(Math.random());
+			cards.splice(cardToKill, 1);
+			cards = [...cards];
+			celebrateMessage = `WOOOOO, you're going to ${cards[0].name}!!`;
+
+			const jsConfetti = new JSConfetti();
+			jsConfetti.addConfetti();
+
+		}, 2000);
 	}
 </script>
 
@@ -43,10 +45,13 @@
 	{#if progressState === 'input'}
 		<ZipInput {loadChoices} {loading} />
 	{/if}
-	{#if progressState === 'cards' && cards}
-		<Cards {cards} {restart} />
+	{#if ['cards', 'flipping'].includes(progressState)}
+		<Cards {cards} {restart} {deleteCard} {progressState} {celebrateMessage} />
 	{/if}
 	<footer class="mt-auto flex justify-center w-full py-6">
-		<button class="transform active:translate-y-1 transition-transform">I'm confused</button>
+		<button
+			on:click={() => window.alert('Just pick one')}
+			class="transform active:translate-y-1 transition-transform">I'm confused</button
+		>
 	</footer>
 </main>
