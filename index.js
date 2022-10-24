@@ -7,7 +7,7 @@ const app = express();
 // Handling '/' route
 app.get("/", async (req, res) => {
     const data = await main()
-    res.send(data);
+    res.send({results: data});
 })
 
 // Server setup
