@@ -9,17 +9,23 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Raleway', 'Open Sans', 'Source Sans Pro', Roboto, 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Myriad Pro', 'Segoe UI', Myriad, Helvetica, 'Lucida Grande', 'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', Tahoma, Geneva, Arial, sans-serif !important;
-    font-weight: 900;
+    /* font-family: 'Sen', 'Open Sans', 'Source Sans Pro', Roboto, 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Myriad Pro', 'Segoe UI', Myriad, Helvetica, 'Lucida Grande', 'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', Tahoma, Geneva, Arial, sans-serif !important; */
+    font-family: 'Roboto Condensed', sans-serif;
+    /* letter-spacing: 0.03em; */
     text-shadow: none;
+}
+
+h1 {
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
 }
 
 main>p,
 main>ul li,
 main>ol li {
+    font-family: 'Lora', 'PT Serif', Cambria, 'Hoefler Text', Utopia, 'Liberation Serif', 'Nimbus Roman No9 L Regular', Times, 'Times New Roman', serif;
     font-size: 12pt;
     line-height: 1.7;
-    font-family: 'Lora', 'PT Serif', Cambria, 'Hoefler Text', Utopia, 'Liberation Serif', 'Nimbus Roman No9 L Regular', Times, 'Times New Roman', serif;
 }
 
 main>p+p {

@@ -1,14 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Sen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Condensed:wght@300;400;700&display=swap');
 
 body {
 	position: relative;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 	font-family: 'Sen', sans-serif;
     color: #fff;
     min-height: 100vh;
     
-    background-image: url('/static/bg.jpg');
+    background-image: url('/static/windows.jpg');
+    backdrop-filter: blur(4px);
+    background-color: rgb(21, 21, 29);
     background-position: center;
-    background-size: 65%;
+    background-size: cover;
+    /* background-size: 65%; */
 }
 
 i {
@@ -54,7 +60,7 @@ i::before {
     box-shadow: 0px 0px 3px 3px #3C3218;
 }
 .cable::after {
-    left: 2rem;
+    left: 1.5rem;
 }
 
 .gradient {
